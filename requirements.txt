@@ -1,0 +1,15 @@
+autopep8
+blinker
+Click
+Flask
+Flask-DebugToolbar
+Flask-SQLAlchemy
+Flask-WTF
+itsdangerous
+Jinja2
+MarkupSafe
+psycopg2-binary
+pycodestyle
+SQLAlchemy
+Werkzeug
+WTForms
