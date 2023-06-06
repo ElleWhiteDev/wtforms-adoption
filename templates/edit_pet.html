@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block title %}Pet Detail{% endblock %} {% block
+content %}
+<div class="main-container">
+	<div class="details-container">
+		<div class="details col-md-6">
+			<h1 class="display-4 text-center">{{pet.name}}</h1>
+			<div class="row justify-content-center">
+				<div class="pet"><img src="{{pet.photo_url}}" /></div>
+				<ul>
+					<li>{{pet.name}} is {{pet.age}} years old</li>
+					<li>Notes: {{pet.notes}}</li>
+				</ul>
+			</div>
+			<form method="POST">
+				{{form.hidden_tag()}} {% for field in form if field.widget.input_type !=
+				"hidden" %}
+				<div class="form-group">
+					{{field.label}} {{field(class_="form-control")}} {% for err in
+					field.errors %}
+					<small class="form-text text-danger"> {{err}} </small>
+					{% endfor %}
+				</div>
+				{% endfor %}
+				<button class="btn btn-success">Submit</button>
+				<a class="btn btn-danger" href="/">Go Back</a>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
